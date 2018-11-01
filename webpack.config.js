@@ -57,7 +57,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Welcome to Axis Cleaning',
+      title: 'Welcome to the Base Form',
       template: './src/html/index.html'
     }),
     new MiniCssExtractPlugin({
