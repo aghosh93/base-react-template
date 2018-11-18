@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "debug": "npm run start -- --display-error-details --display-modules --display-reasons --profile",
-    "dev": "node server.js",
+    "dev": "NODE_ENV='dev' node server.js",
     "lint": "eslint webpack.config.js src/",
     "lint-fix": "npm run lint -- --fix",
     "start": "webpack --mode development"
@@ -14,30 +14,34 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
-    "ajv": "^6.5.3",
+    "ajv": "^6.5.5",
     "babel-loader": "^8.0.0",
-    "css-loader": "^1.0.0",
-    "eslint": "^5.5.0",
+    "css-loader": "^1.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-react": "^7.11.1",
     "express": "^4.16.3",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.2",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
-    "webpack": "^4.17.1",
+    "webpack": "^4.25.1",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-middleware": "^3.2.0"
+    "webpack-dev-middleware": "^3.2.0",
+    "webpack-hot-middleware": "^2.24.3"
   },
   "dependencies": {
-    "foundation-sites": "^6.5.0-rc.2",
+    "foundation-sites": "^6.5.1",
     "jquery": "^3.3.1",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "what-input": "^5.1.1"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "what-input": "^5.1.3"
   }
 }

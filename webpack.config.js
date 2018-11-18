@@ -1,11 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+const webpack = require('webpack');
 
-module.exports = {
-  devtool: "source-map",
+const config = {
   entry: {
-    main: './src/js/index.js'
+    main: ['./src/js/index.js'],
   },
   module: {
     rules: [
@@ -13,59 +13,75 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             presets: [
               [
                 '@babel/env',
                 {
-                  "modules" : "commonjs"
-                }
+                  modules: 'commonjs',
+                },
               ],
-              '@babel/react'
+              '@babel/react',
             ],
-          }
-        }
+          },
+        },
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
-              sourceMap: true
-            }
-          }
-        ]
+              sourceMap: true,
+            },
+          },
+        ],
       },
-    ]
+    ],
   },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: ''
+    publicPath: '',
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Welcome to the Base Form',
-      template: './src/html/index.html'
+      template: './src/html/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
   ],
   watchOptions: {
-    ignored: ['/node_modules/']
-  }
+    ignored: ['/node_modules/'],
+  },
 };
+
+// Config changes for speedier development
+if (process.env.NODE_ENV === 'dev') {
+  config.devtool = 'source-map';
+  config.entry.main.push('webpack-hot-middleware/client');
+  config.mode = 'development';
+  config.module.rules[1].use[0] = {
+    loader: 'style-loader',
+    options: {
+      sourceMap: true,
+    },
+  };
+  config.plugins.push(new webpack.HotModuleReplacementPlugin());
+}
+
+module.exports = config;
