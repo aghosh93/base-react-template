@@ -57,6 +57,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      themeColor: '#4285f4',
       title: 'Welcome to the Base Form',
       template: './src/html/index.html',
     }),
