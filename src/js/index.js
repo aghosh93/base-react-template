@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Main = require('./components/Main.react');
+import Main from './components/Main.react';
 
 ReactDOM.render(
   <Main />,

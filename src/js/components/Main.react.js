@@ -1,13 +1,17 @@
 import React from 'react';
 
+import Loading from './Loading.react';
+
+const Content = React.lazy(() => import('./Content.react'));
+
 require('../../scss/main.scss');
 
 function Main() {
   return (
     <React.Fragment>
-      <div>
-        <h1>Welcome to the Base Form</h1>
-      </div>
+      <React.Suspense fallback={<Loading />}>
+        <Content />
+      </React.Suspense>
     </React.Fragment>
   );
 }
