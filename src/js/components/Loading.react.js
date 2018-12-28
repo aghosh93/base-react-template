@@ -3,12 +3,12 @@ import LoadingImage from './common/LoadingImage.react';
 
 function Loading() {
   const componentStyle = {
-    'text-align': 'center',
+    textAlign: 'center',
   };
 
   return (
     <div style={componentStyle}>
-      <LoadingImage width="3em" />
+      <LoadingImage width="5em" />
     </div>
   );
 }
