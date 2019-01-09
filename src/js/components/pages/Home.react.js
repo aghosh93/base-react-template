@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet';
 
 import Content from '../Content.react';
 
 function Home() {
   return (
-    <Content />
+    <Fragment>
+      <Helmet>
+        <title>Welcome to Home | Base</title>
+      </Helmet>
+      <Content />
+    </Fragment>
   );
 }
 
