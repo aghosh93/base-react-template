@@ -14,3 +14,4 @@ This template includes:
 
 Features Included:
 - Bundle Spitting - simple ones provided by [webpack configs](https://webpack.js.org/guides/code-splitting/#prevent-duplication) and [`React.lazy`](https://reactjs.org/docs/code-splitting.html#reactlazy)
+- Routing - Added the ability for routing using React Router. Currently just using `HashRouter` as it give the flexibility to last on route with out having to land `Home` page first to make a `React.lazy` work splitting. Future work to add ability for Static Routing with Server Side Render to create landing pages outside of regular MPA.
