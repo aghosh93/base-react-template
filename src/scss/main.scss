@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+:export {
+  themeColor: $theme-color;
+}
+
+body {
+  background-color: $background-color;
+  padding: 3em 5em;
+}
+
+nav {
+  display: inline;
+}
