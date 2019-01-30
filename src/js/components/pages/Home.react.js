@@ -7,7 +7,7 @@ function Home() {
   return (
     <Fragment>
       <Helmet>
-        <title>Welcome to Home | Base</title>
+        <title>Welcome to Base | Home</title>
       </Helmet>
       <Content />
     </Fragment>
