@@ -1,7 +1,12 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
 
-import Content from '../Content.react';
+import variables from '../../../scss/main.scss';
+
+const H1 = styled.h1`
+  color: ${variables.fontColor};
+`;
 
 function Home() {
   return (
@@ -9,7 +14,7 @@ function Home() {
       <Helmet>
         <title>Welcome to Base | Home</title>
       </Helmet>
-      <Content />
+      <H1>Welcome to the Base Form</H1>
     </Fragment>
   );
 }
